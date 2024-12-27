@@ -1,0 +1,438 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(pikaso.jpeg);
+    width:100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    backdrop-filter: blur(50px);
+}
+
+.nav {
+    display: flex; 
+    align-items: center; 
+    border: 1px solid rgba(255, 255, 255, 0.18); 
+    height: 80px;
+    font-size: 0px;
+    background-color: rgba(9, 10, 10, 0.3); /* 30% opacity for transparency */
+    position: fixed; 
+    top: 0;
+    width: 100%; 
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Adds a subtle blur effect */
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+}
+
+.logo{
+    display: inline-flex; /* Use inline-flex for better alignment */
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center the text horizontally */
+    height: 100%;
+    width: 10%; /* Keep it wide enough */
+    color: white; /* Make sure the text is white for visibility */
+    font-size: 50px; /* Set a reasonable font size for the logo */
+    font-weight: bolder; /* Ensure the text is bold */
+    font-style: italic;
+
+}
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.name {
+    display: flex;
+    flex-direction: column; 
+
+    height: 100%;
+    width: 50%;
+    font-family: 'Gowun Batang';
+    color: rgb(255, 255, 255);
+}
+
+.hotel-title {
+    font-size: 36px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    padding-left: 40px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.subtext {
+    font-size: 14px;
+    text-transform: none;
+    margin-top: 5px;
+    font-family:'Gowun Batang' ;
+    color: rgb(255, 255, 255);
+    padding-left: 80px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.property{
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    /* border: 1px solid black; */
+    height: 100%;
+    width: 15%;
+    padding: 10px 20px; 
+}
+
+
+.property a,
+.login a,
+.cs a{
+    font-family:'Playfair Display', serif; ;
+    text-decoration: none;
+    color: rgb(255, 255, 255); 
+}
+.login {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    /* border: 1px solid black; */
+    height: 100%;
+    width: 15%;
+    padding: 10px 20px; 
+}
+
+
+
+.cs{
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    /* border: 1px solid black; */
+    height: 100%;
+    width: 13%;
+}
+
+.property button,
+.login button,
+.cs button {
+    background-color: transparent; /* Fully transparent background */
+    color: white; /* Keep the text white */
+    border: none; /* Remove border to eliminate any white outline */
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: none; /* No shadow to keep buttons flat */
+}
+
+.property button:hover,
+.login button:hover,
+.cs button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight transparency on hover */
+    color: #41cecc; /* Change text color for hover effect */
+}
+
+.search {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+    overflow: hidden;
+}
+
+.video-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+}
+#background-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        
+ } 
+    
+
+.search-bar, .ref .city {
+    z-index: 1; /* Keeps the content above the video */
+}
+.search-bar {
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 15px; 
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.search-input, .date-input, .guest-select {
+    background-color: rgba(255, 255, 255, 0.5); 
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-input {
+    flex: 2;
+}
+
+.date-input {
+    flex: 1;
+}
+
+.guest-select {
+    flex: 1;
+}
+
+.search-input:hover, .date-input:hover, .guest-select:hover {
+    border-color: #41cecc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-button {
+    background-color: rgba(9, 10, 10, 0.7);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    height: 60px; 
+    cursor: pointer;
+    flex: .5; 
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-button:hover {
+    background-color: #41cecc;
+    transform: scale(1.05); 
+}
+
+.search-input:hover, .date-input:hover, .guest-select:hover {
+    border-color: #41cecc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ref{
+    height: 400px;
+    font-size: 0; /* Keeps text hidden for layout */
+    display: flex;
+    position: relative; /* Make it a positioning context */
+    backdrop-filter: blur(50px); /* Apply the blur effect */
+
+}
+
+.city{
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+    padding: 10px;
+    position: relative;
+   
+}
+
+.city img{
+    max-width:100%;
+    max-height: 100%;
+    object-fit: contain; 
+    border-radius: 25px;
+    padding: 10px;
+    border-image: fill 0 linear-gradient(rgba(142, 150, 153, 0.995),#8a9699);
+}
+
+.city-label {
+    position: absolute;
+    bottom: 50px; 
+    padding-bottom: 200px;
+    padding-left: 70px;
+    left: 10%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.city img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    
+}
+
+.city a:hover .city-label {
+    color: #000000; /* Change label color on hover */
+}
+
+.map {
+    /* border: 2px solid rgb(253, 253, 253); */
+    height: 600px;
+    font-size: 0px;
+    display: flex;
+
+}
+
+.side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%; /* Make sure it occupies 50% of the map container */
+    overflow: hidden; /* Ensure no overflow beyond the container */
+}
+
+.side img {
+    width: 100%; /* Ensures the image takes full width */
+    height: 100%; /* Ensures the image takes full height */
+    object-fit: contain; /* Keeps the aspect ratio without cutting off */
+    padding-right: 180px;
+    box-shadow: 20px 20px 20px 20px black;
+    mix-blend-mode: screen;
+}
+
+.side2 {
+    width: 50%; /* The second side occupies the remaining space */
+}
+.lp {
+    /* border: 2px solid rgb(255, 255, 255); */
+    height: 60px;
+    font-size: initial; /* Remove font-size: 0; */
+    display: flex; /* Aligns items horizontally */
+    align-items: center; /* Centers items vertically */
+}
+
+.list1 {
+    font-family: 'Gowun Batang';
+    color: rgb(255, 255, 255);
+    font-size: 20px; /* Add a readable font size */
+    display: flex;
+    justify-content: center; /* Centers text horizontally */
+    align-items: center; /* Centers text vertically */
+    /* border: 1px solid rgb(0, 0, 0); */
+    height: 100%;
+    width: 80%;
+}
+
+.list2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid rgb(0, 0, 0); */
+    height: 100%;
+    width: 20%;
+}
+
+.list2 .list-button {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.list2 .list-button:hover {
+    background-color: #41cecc;
+}
+
+.footer {
+    /* border: 2px solid rgb(255, 255, 255); */
+    height: auto;
+    font-size: initial;
+    display: flex;
+    justify-content: center; /* Centers the entire footer content horizontally */
+    padding: 20px;
+    color: white;
+}
+
+.ft {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally within each .ft block */
+    border: 1px solid rgb(255, 255, 255);
+    height: auto;
+    width: 24%;
+    padding: 10px;
+    text-align: center; /* Centers text within the block */
+}
+
+.ft h3 {
+    font-family: Verdana, sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-align: center; /* Ensures heading is centered */
+}
+
+.ft ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center; /* Centers the list */
+}
+
+.ft li {
+    margin-bottom: 8px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.ft li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.ft li a:hover {
+    color: #ffffff; /* Change color on hover */
+}
+
+.ft li a:visited {
+    color: #c1c1c1; /* Different color for visited links */
+}
+
+button {
+    background-color: #090a0a;
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+button:hover {
+    background-color: #41cecc; 
+}
+
+.icon {
+    width: 20px; 
+    height: 20px; 
+    margin-right: 5px; 
+}
+input[type="date"]::placeholder {
+    text-transform: uppercase; 
+    color: rgba(140, 36, 36, 0.7); 
+}

@@ -1,0 +1,16 @@
+table,
+th,
+tr,
+td {
+    background-color: aqua;
+    width: 500px;
+
+    text-align: center;
+    border-spacing: 0px;
+    border-style: dotted solid black;
+    border: solid 1px rgb(11, 12, 11);
+}
+
+#r1 {
+    background-color: green;
+}
