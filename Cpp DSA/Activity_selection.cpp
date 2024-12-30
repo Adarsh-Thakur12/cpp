@@ -5,7 +5,7 @@ int activity(vector<int> start, vector<int> end)
 {
     int count = 1;
     int currEnd = end[0];
-    for (int i = 0; i <= start.size(); i++)
+    for (int i = 0; i < start.size(); i++)
     {
         if (start[i] >= currEnd)
         {
