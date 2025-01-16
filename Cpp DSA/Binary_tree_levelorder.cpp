@@ -27,13 +27,31 @@ node *builttree(vector<int> nodes)
     newnode->right = builttree(nodes);
     return newnode;
 } 
-void levelorder(node *root)
+void levelorder_iterative(node*root)
 {
-    queue<node *> q;
+    vector<int>vec;
+    queue<node*>q;
+    q.push(root);
+    while(!q.empty())
+    {
+        node*curr=q.front();
+        q.pop();
+        vec.push_back(curr->data);
+        if(curr->left!=NULL)q.push(curr->left);
+        if(curr->right!=NULL)q.push(curr->right);
+    }
+    for(int i=0;i<vec.size();i++)
+    {
+        cout<<vec[i];
+    }
+}
+void levelorder_recursive(node *root)
+{
     if (root == NULL)
     {
         return;
     }
+    queue<node *> q;
     q.push(root);
     q.push(NULL);
     while (!q.empty())
@@ -51,7 +69,7 @@ void levelorder(node *root)
         }
         else
         {
-            cout << curr->data << " ";
+            cout << curr->data<<" ";
             if (curr->left != NULL)
             {
                 q.push(curr->left);
@@ -67,5 +85,8 @@ int main()
 {
     vector<int> nodes = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
     node *root = builttree(nodes);
-    levelorder(root);
+    levelorder_iterative(root);
+    cout<<endl;
+    levelorder_recursive(root);
+
 }
