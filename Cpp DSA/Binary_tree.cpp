@@ -115,11 +115,30 @@ pair<int, int> dia(node *root)
     int finalh = max(leftinfo.second, rightinfo.second) + 1;
     return make_pair(finaldia, finalh);
 }
-void 
+bool isidentical(node *root, node *subroot)
+{
+    if (root == NULL && subroot == NULL)
+        return true;
+    else if (root == NULL || subroot == NULL)
+    {
+        return false;
+    }
+    if (root->data != subroot->data)
+        return false;
+    return isidentical(root->left, subroot->left) && isidentical(root->right, subroot->right);
+}
 bool subtree(node *root, node *subroot)
 {
+    if (root == NULL && subroot == NULL)
+        return true;
+    else if (root == NULL || subroot == NULL)
+    {
+        return false;
+    }
     if (root->data == subroot->data)
     {
+        if(isidentical(root,subroot))
+        return true;
     }
     int leftsubtree = subtree(root->left, subroot);
     if (!leftsubtree)
