@@ -40,7 +40,7 @@ bool Findnode(node *root, int n, vector<node *> &path)
     path.pop_back();
     return false;
 }
-node *LCA(node *root, int n1, int n2)
+node *LCA1(node *root, int n1, int n2)
 {
     vector<node *> path1, path2;
     // Findnode(root, n1, path1);
@@ -59,14 +59,36 @@ node *LCA(node *root, int n1, int n2)
 
     return lca;
 }
+node *LCA2(node *root, int n1, int n2)
+{
+    if (root == NULL)
+        return NULL;
+    if (root->data == n1 || root->data == n2)
+        return root;
+    node* left = LCA2(root->left, n1, n2);
+    node* right = LCA2(root->right, n1, n2);
+    if (left!=NULL&& right!=NULL)
+        return root;
+    return left == NULL ? right : left;
+}
 int main()
 {
     vector<int> nodes = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
     node *root = builttree(nodes);
-    node *ans = LCA(root, 4, 5);
+    node *ans = LCA1(root, 4, 5);
+    node *ans1 = LCA2(root, 4, 5);
     if (ans != NULL)
     {
         cout << "LCA: " << ans->data << endl;
+    }
+    else
+    {
+        cout << "LCA not found!" << endl;
+    }
+    cout << endl;
+    if (ans1 != NULL)
+    {
+        cout << "LCA: " << ans1->data << endl;
     }
     else
     {
